@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Your Name</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
+  <link rel="stylesheet" href="../resources/css/projects.css">
+</head>
+
+<body>
+  <div id="navbar"></div>
+
+  <main class="container mt-4">
+    <h1>Projects</h1>
+  </main>
+
+  <div class="customcarousel">
+    <button class="arrow left">‹</button>
+
+    <div class="track">
+      <div class="item"><img src="../resources/img/frog7.jpg">
+        <div class="caption">Wearing a hat</div>
+      </div>
+      <div class="item"><img src="../resources/img/frog3.jpeg">
+        <div class="caption">Standing on a leaf</div>
+      </div>
+      <div class="item"><img src="../resources/img/frog4.jpg">
+        <div class="caption">Jumping</div>
+      </div>
+      <div class="item"><img src="../resources/img/frog5.jpeg">
+        <div class="caption">Eating bug</div>
+      </div>
+      <div class="item"><img src="../resources/img/frog6.jpg">
+        <div class="caption">Sleeping</div>
+      </div>
+    </div>
+
+    <button class="arrow right">›</button>
+  </div>
+
+
+
+  <div id="footer"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+
+  <script src="../resources/js/projects.js"></script>
+
+  <!-- Navbar loader -->
+  <script>
+    fetch("navbar.html").then(res => res.text()).then(data => {
+      document.getElementById("navbar").innerHTML = data;
+    });
+  </script>
+
+  <!-- Other thing loarder-->
+  <script>
+    fetch("footer.html").then(res => res.text()).then(data => {
+      document.getElementById("footer").innerHTML = data;
+    });
+  </script>
+</body>
+
+</html>
