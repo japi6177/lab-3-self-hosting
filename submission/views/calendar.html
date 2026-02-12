@@ -12,10 +12,13 @@
 
 <body>
 
+    <div id="navbar"></div>
+
     <div class="row">
         <div class="col-2">
             <div class="custom-container">
-                <button class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#event_modal" onclick="enableSaveButton()">
+                <button class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#event_modal"
+                    onclick="enableSaveButton()">
                     Create Event
                 </button>
             </div>
@@ -72,7 +75,8 @@
                 <!-- Modal Header -->
                 <div class="modal-header">
                     <h5 class="modal-title" id="eventModalLabel">Create Calendar Event</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onclick="clearForm()"></button>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+                        onclick="clearForm()"></button>
                 </div>
 
                 <!-- Modal Body -->
@@ -141,7 +145,8 @@
                         <!-- Event Modality -->
                         <div class="mb-3">
                             <label for="event_modality" class="form-label">Event Modality</label>
-                            <select class="form-select" id="event_modality" required onchange="updateLocationOptions(this.value)">
+                            <select class="form-select" id="event_modality" required
+                                onchange="updateLocationOptions(this.value)">
                                 <option value="">Select modality</option>
                                 <option value="in_person">In-Person</option>
                                 <option value="remote">Remote</option>
@@ -163,7 +168,7 @@
                         <!-- Remote URL (Remote)-->
                         <div class="mb-3 d-none" id="remote_url_group">
                             <label for="event_remote_url" class="form-label">Remote URL</label>
-                            <input type="text" class="form-control" id="event_remote_url" pattern="^https://.+\..+$" 
+                            <input type="text" class="form-control" id="event_remote_url" pattern="^https://.+\..+$"
                                 placeholder="https://zoom.us/ or https://teams.microsoft.com/">
                             <div class="invalid-feedback">
                                 Please provide a valid meeting URL.
@@ -185,9 +190,12 @@
 
                 <!-- Modal Footer -->
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick="clearForm()" id="cancel_btn">Cancel</button>
-                    <button type="button" class="btn btn-primary" onclick="saveEvent()" id="save_btn">Save Event</button>
-                    <button type="button" class="btn btn-success d-none" onclick="saveEdit()" id="edit_btn">Save Edit</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick="clearForm()"
+                        id="cancel_btn">Cancel</button>
+                    <button type="button" class="btn btn-primary" onclick="saveEvent()" id="save_btn">Save
+                        Event</button>
+                    <button type="button" class="btn btn-success d-none" onclick="saveEdit()" id="edit_btn">Save
+                        Edit</button>
 
                 </div>
 
@@ -196,6 +204,21 @@
     </div>
 
 
+    <div id="footer"></div>
+
+    <!-- Navbar loader -->
+    <script>
+        fetch("navbar.html").then(res => res.text()).then(data => {
+            document.getElementById("navbar").innerHTML = data;
+        });
+    </script>
+
+    <!-- Other thing loarder-->
+    <script>
+        fetch("footer.html").then(res => res.text()).then(data => {
+            document.getElementById("footer").innerHTML = data;
+        });
+    </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
